@@ -34,8 +34,6 @@ class CreateUsuariosTable extends Migration
             $table->unsignedBigInteger('usuario_tipo_documento_id')->nullable();
             $table->foreign('usuario_tipo_documento_id')->references('id')->on('tipo_documentos');
             $table->string('usuario_numero_doc',50)->nullable();
-            $table->unsignedBigInteger('usuario_doc_ext_muni_id');
-            $table->foreign('usuario_doc_ext_muni_id')->references('id')->on('municipios')->nullable();
             $table->unsignedBigInteger('referencia_id');
             $table->foreign('referencia_id')->references('id')->on('referencias');
             $table->unsignedBigInteger('establecimiento_id');

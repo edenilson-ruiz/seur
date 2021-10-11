@@ -71,7 +71,7 @@ class Usuario extends Model
     public static function search($query)
     {
         return empty($query) ? static::query()
-            : static::where('usuario_nombres', 'like', '%'.$query.'%')
-                ->orWhere('usuario_apellidos', 'like', '%'.$query.'%');
+            : static::where('usuario_nombre_1', 'like', '%'.$query.'%')
+                ->orWhere('usuario_apellido_1', 'like', '%'.$query.'%');
     }
 }

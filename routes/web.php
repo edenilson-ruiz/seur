@@ -34,7 +34,7 @@ Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashb
 
 Auth::routes(['verify' => true]);
 
-Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index')->middleware('auth');
+Route::resource('usuarios', UsuarioController::class)->middleware('auth');
 
 /* Route Dashboards */
 Route::group(['prefix' => 'dashboard'], function () {
