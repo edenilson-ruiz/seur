@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Escolaridad;
 use App\Models\Establecimiento;
+use App\Models\EstadoCivil;
+use App\Models\Genero;
 use App\Models\MotivoAtencion;
+use App\Models\Ocupacion;
 use App\Models\Referencia;
 use App\Models\TipoDocumento;
 use Illuminate\Http\Request;
@@ -31,11 +35,19 @@ class UsuarioController extends Controller
         $referencias = Referencia::orderBy('referencia_nombre')->get();
         $establecimientos = Establecimiento::orderBy('establecimiento_nombre')->get();
         $motivosAtencion = MotivoAtencion::orderBy('motivo_atencion_nombre')->get();
+        $generos = Genero::all();
+        $estadosCivil = EstadoCivil::all();
+        $escolaridades = Escolaridad::all();
+        $ocupaciones = Ocupacion::all();
         return view('usuarios.create', compact(
             'tipoDocumentos',
             'referencias',
             'establecimientos',
-            'motivosAtencion'
+            'motivosAtencion',
+            'generos',
+            'estadosCivil',
+            'escolaridades',
+            'ocupaciones'
             )
         );
     }
@@ -48,7 +60,6 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

@@ -18,11 +18,11 @@ class CreateUsuariosTable extends Migration
             $table->string('expediente_num', 20)->nullable();
             $table->string('expediente_ant', 20)->nullable();
             $table->string('usuario_nombre_1', 50);
-            $table->string('usuario_nombre_2', 50);
-            $table->string('usuario_nombre_3', 50);
+            $table->string('usuario_nombre_2', 50)->nullable();
+            $table->string('usuario_nombre_3', 50)->nullable();
             $table->string('usuario_apellido_1', 50);
-            $table->string('usuario_apellido_2', 50);
-            $table->string('usuario_apellido_3', 50);
+            $table->string('usuario_apellido_2', 50)->nullable();
+            $table->string('usuario_apellido_3', 50)->nullable();
             $table->string('usuario_direccion_calle_avenida');
             $table->string('usuario_direccion_casa_edificio_apto');
             $table->string('usuario_direccion_colonia_barrio');
@@ -30,10 +30,10 @@ class CreateUsuariosTable extends Migration
             $table->date('usuario_fecha_apertura_exp');
             $table->string('usuario_tel_fijo');
             $table->string('usuario_tel_celular');
-            $table->string('usuario_email');
+            $table->string('usuario_email')->unique();
             $table->unsignedBigInteger('usuario_tipo_documento_id')->nullable();
             $table->foreign('usuario_tipo_documento_id')->references('id')->on('tipo_documentos');
-            $table->string('usuario_numero_doc',50)->nullable();
+            $table->string('usuario_numero_doc',50);
             $table->unsignedBigInteger('referencia_id');
             $table->foreign('referencia_id')->references('id')->on('referencias');
             $table->unsignedBigInteger('establecimiento_id');
@@ -44,7 +44,7 @@ class CreateUsuariosTable extends Migration
             $table->foreign('departamento_id')->references('id')->on('departamentos');
             $table->unsignedBigInteger('municipio_id');
             $table->foreign('municipio_id')->references('id')->on('municipios');
-            $table->unsignedBigInteger('genero_id');
+            $table->char('genero_id',1);
             $table->foreign('genero_id')->references('id')->on('generos');
             $table->unsignedBigInteger('estado_civil_id');
             $table->foreign('estado_civil_id')->references('id')->on('estados_civil');

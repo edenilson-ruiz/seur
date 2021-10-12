@@ -14,10 +14,11 @@ class CreateGenerosTable extends Migration
     public function up()
     {
         Schema::create('generos', function (Blueprint $table) {
-            $table->id();
+            $table->char('id',1);
             $table->string('genero_nombre','20');
-            $table->string('genero_clave','20');
             $table->timestamps();
+
+            $table->primary('id');
         });
     }
 

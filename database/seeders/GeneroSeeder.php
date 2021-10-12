@@ -15,13 +15,13 @@ class GeneroSeeder extends Seeder
     public function run()
     {
         Genero::create([
+            'id' => 'M',
         	'genero_nombre' => 'Masculino',
-	        'genero_clave' => 'M'
         ]);
 
         Genero::create([
-        	'genero_nombre' => 'Femenino',
-	        'genero_clave' => 'F'
+            'id' => 'F',
+        	'genero_nombre' => 'Femenino'
         ]);
     }
 }

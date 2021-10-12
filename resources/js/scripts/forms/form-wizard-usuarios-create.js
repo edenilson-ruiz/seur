@@ -69,49 +69,50 @@ $(function () {
           usuario_nombre_1: {
             required: true
           },
-          email: {
+          usuario_apellido_1: {
             required: true
           },
-          password: {
+          usuario_fecha_nacimiento: {
             required: true
           },
-          'confirm-password': {
-            required: true,
-            equalTo: '#password'
-          },
-          'first-name': {
+          usuario_email: {
             required: true
           },
-          'last-name': {
+          usuario_tipo_documento_id: {
             required: true
           },
-          address: {
+          usuario_numero_doc: {
             required: true
           },
-          landmark: {
+          genero_id: {
             required: true
           },
-          country: {
+          estado_civil_id: {
             required: true
           },
-          language: {
+          escolaridad_id: {
             required: true
           },
-          twitter: {
-            required: true,
-            url: true
+          ocupacion_id: {
+            required: true
           },
-          facebook: {
-            required: true,
-            url: true
+          usuario_direccion_calle_avenida: {
+            required: true
           },
-          google: {
-            required: true,
-            url: true
+          usuario_direccion_casa_edificio_apto: {
+            required: true
           },
-          linkedin: {
-            required: true,
-            url: true
+          usuario_direccion_colonia_barrio: {
+            required: true
+          },
+          departamento_id: {
+            required: true
+          },
+          municipio_id: {
+            required: true
+          },
+          nombre_conyugue: {
+            required: true
           }
         }
       });
@@ -138,10 +139,37 @@ $(function () {
 
     $(horizontalWizard)
       .find('.btn-submit')
-      .on('click', function () {
+      .on('click', function (e) {
         var isValid = $(this).parent().siblings('form').valid();
         if (isValid) {
-          alert('Submitted..!!');
+          let usuario_nombre_1 = $('#usuario_nombre_1').val();
+          let usuario_nombre_2 = $('#usuario_nombre_2').val();
+          let usuario_nombre_3 = $('#usuario_nombre_3').val();
+          let usuario_apellido_1 = $('#usuario_apellido_1').val();
+          let usuario_apellido_2 = $('#usuario_apellido_2').val();
+          let usuario_apellido_3 = $('#usuario_apellido_3').val();
+
+          $.ajax({
+            url: "{{ route('usuario.store') }}",
+            type:"POST",
+            data:{
+              "_token": "{{ csrf_token() }}",
+              usuario_nombre_1:usuario_nombre_1,
+              usuario_nombre_2:usuario_nombre_2,
+              usuario_nombre_3:usuario_nombre_3,
+              usuario_apellido_1:usuario_apellido_1,
+              usuario_apellido_2:usuario_apellido_2,
+              usuario_apellido_3:usuario_apellido_3
+            },
+            success:function(response){
+              console.log(response);
+            },
+            error: function(response) {
+              alert(response);
+            },
+            });
+          });
+
         }
       });
   }

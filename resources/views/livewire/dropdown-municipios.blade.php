@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4 mb-4">
+    <div class="mb-1 col-md-4">
         <label class="form-label" for="departamento_id">Departamento</label>
         <select wire:model="departamento" class="form-select" id="departamento_id" name="departamento_id">
             <option value="">Seleccione</option>
@@ -10,7 +10,7 @@
     </div>
 
     @if(!is_null($municipios))
-        <div class="col-md-4 mb-4">
+        <div class="mb-1 col-md-4">
             <label class="form-label" for="municipio_id">Municipio</label>
             <select class="form-select" id="municipio_id" name="municipio_id">
                 <option value="" selected>Seleccione</option>
