@@ -155,6 +155,38 @@ $(function () {
                     let usuario_apellido_1 = $('#usuario_apellido_1').val();
                     let usuario_apellido_2 = $('#usuario_apellido_2').val();
                     let usuario_apellido_3 = $('#usuario_apellido_3').val();
+                    let referencia_id = $('#referencia_id').val();
+                    let establecimiento_id = $('#establecimiento_id').val();
+                    let usuario_direccion_colonia_barrio = $('#usuario_direccion_colonia_barrio').val();
+                    let usuario_fecha_nacimiento = $('#usuario_fecha_nacimiento').val();
+                    let usuario_fecha_apertura_exp = $('#usuario_fecha_apertura_exp').val();
+                    let usuario_tel_fijo = $('#usuario_tel_fijo').val();
+                    let usuario_tel_celular = $('#usuario_tel_celular').val();
+                    let usuario_email = $('#usuario_email').val();
+                    let usuario_tipo_documento_id = $('#usuario_tipo_documento_id').val();
+                    let usuario_numero_doc = $('#usuario_numero_doc').val();
+                    let usuario_direccion_calle_avenida = $('#usuario_direccion_calle_avenida').val();
+                    let usuario_direccion_casa_edificio_apto = $('#usuario_direccion_casa_edificio_apto').val();
+                    let motivo_atencion_id = $('#motivo_atencion_id').val();
+                    let responsable_direccion = $('#responsable_direccion').val();
+                    let municipio_id = $('#municipio_id').val();
+                    let genero_id = $('#genero_id').val();
+                    let estado_civil_id = $('#estado_civil_id').val();
+                    let escolaridad_id = $('#escolaridad_id').val();
+                    let ocupacion_id = $('#ocupacion_id').val();
+                    let nombre_padre = $('#nombre_padre').val();
+                    let nombre_madre = $('#nombre_madre').val();
+                    let nombre_conyugue = $('#nombre_conyugue').val();
+                    let departamento_id = $('#departamento_id').val();
+                    let responsable_telefono = $('#responsable_telefono').val();
+                    let informante_nombre = $('#informante_nombre').val();
+                    let informante_parentesco = $('#informante_parentesco').val();
+                    let informante_tipo_documento_id = $('#informante_tipo_documento_id').val();
+                    let informante_numero_doc = $('#informante_numero_doc').val();
+                    let informante_telefono = $('#informante_telefono').val();
+                    let informante_direccion = $('#informante_direccion').val();
+                    let responsable_nombre = $('#responsable_nombre').val();
+                    let user_id = $('#user_id').val();
 
                     $.ajaxSetup({
                         headers: {
@@ -166,12 +198,44 @@ $(function () {
                         url: "/usuarios",
                         type: "POST",
                         data: {
-                            usuario_nombre_1: usuario_nombre_1,
-                            usuario_nombre_2: usuario_nombre_2,
-                            usuario_nombre_3: usuario_nombre_3,
-                            usuario_apellido_1: usuario_apellido_1,
-                            usuario_apellido_2: usuario_apellido_2,
-                            usuario_apellido_3: usuario_apellido_3
+                            usuario_nombre_1 : usuario_nombre_1,
+                            usuario_nombre_2 : usuario_nombre_2,
+                            usuario_nombre_3 : usuario_nombre_3,
+                            usuario_apellido_1 : usuario_apellido_1,
+                            usuario_apellido_2 : usuario_apellido_2,
+                            usuario_apellido_3 : usuario_apellido_3,
+                            referencia_id : referencia_id,
+                            establecimiento_id : establecimiento_id,
+                            usuario_direccion_colonia_barrio : usuario_direccion_colonia_barrio,
+                            usuario_fecha_nacimiento : usuario_fecha_nacimiento,
+                            usuario_fecha_apertura_exp : usuario_fecha_apertura_exp,
+                            usuario_tel_fijo : usuario_tel_fijo,
+                            usuario_tel_celular : usuario_tel_celular,
+                            usuario_email : usuario_email,
+                            usuario_tipo_documento_id : usuario_tipo_documento_id,
+                            usuario_numero_doc : usuario_numero_doc,
+                            usuario_direccion_calle_avenida : usuario_direccion_calle_avenida,
+                            usuario_direccion_casa_edificio_apto : usuario_direccion_casa_edificio_apto,
+                            motivo_atencion_id : motivo_atencion_id,
+                            responsable_direccion : responsable_direccion,
+                            municipio_id : municipio_id,
+                            genero_id : genero_id,
+                            estado_civil_id : estado_civil_id,
+                            escolaridad_id : escolaridad_id,
+                            ocupacion_id : ocupacion_id,
+                            nombre_padre : nombre_padre,
+                            nombre_madre : nombre_madre,
+                            nombre_conyugue : nombre_conyugue,
+                            departamento_id : departamento_id,
+                            responsable_telefono : responsable_telefono,
+                            informante_nombre : informante_nombre,
+                            informante_parentesco : informante_parentesco,
+                            informante_tipo_documento_id : informante_tipo_documento_id,
+                            informante_numero_doc : informante_numero_doc,
+                            informante_telefono : informante_telefono,
+                            informante_direccion : informante_direccion,
+                            responsable_nombre : responsable_nombre,
+                            user_id : user_id
                         },
                         success: function (response) {
                             console.log(response);
