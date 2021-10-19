@@ -68,10 +68,11 @@ class Usuario extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function search($query)
+    public static function scopeSearch($query, $val)
     {
-        return empty($query) ? static::query()
-            : static::where('usuario_nombre_1', 'like', '%'.$query.'%')
-                ->orWhere('usuario_apellido_1', 'like', '%'.$query.'%');
+        return $query
+            ->where('usuario_nombre_1','like','%'.$val.'%')
+            ->Orwhere('usuario_apellido_1','like','%'.$val.'%')
+            ->Orwhere('usuario_email','like','%'.$val.'%');
     }
 }

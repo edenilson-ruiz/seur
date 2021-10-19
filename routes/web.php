@@ -16,6 +16,7 @@ use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CentroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashb
 Auth::routes(['verify' => true]);
 
 Route::resource('usuarios', UsuarioController::class)->middleware('auth');
+Route::resource('centros', CentroController::class)->middleware('auth');
 
 /* Route Dashboards */
 Route::group(['prefix' => 'dashboard'], function () {
